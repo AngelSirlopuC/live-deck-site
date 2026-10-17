@@ -9,19 +9,24 @@
     <link rel="canonical" href="https://projects.angelsirlopu.dev/live-deck/es/" />
     <link rel="alternate" hreflang="en" href="https://projects.angelsirlopu.dev/live-deck/" />
     <link rel="alternate" hreflang="es-PE" href="https://projects.angelsirlopu.dev/live-deck/es/" />
+    <link rel="alternate" hreflang="es" href="https://projects.angelsirlopu.dev/live-deck/es/" />
     <link rel="alternate" hreflang="x-default" href="https://projects.angelsirlopu.dev/live-deck/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PE" />
     <meta property="og:title" content="Live Deck: diapositivas que tu público puede responder" />
     <meta property="og:description" content="Presentas desde una consola; el público te sigue, vota y reacciona desde su celular. Sin instalar ninguna app." />
     <meta property="og:url" content="https://projects.angelsirlopu.dev/live-deck/es/" />
+    <meta name="author" content="Angel Sirlopu" />
+    <meta property="og:site_name" content="Live Deck" />
+    <meta property="og:image" content="https://projects.angelsirlopu.dev/live-deck/og-es.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://projects.angelsirlopu.dev/live-deck/og-es.png" />
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://projects.angelsirlopu.dev/live-deck/#website", "url": "https://projects.angelsirlopu.dev/live-deck/", "name": "Live Deck", "inLanguage": ["en", "es-PE"], "publisher": {"@id": "https://github.com/AngelSirlopuC#person"}}, {"@type": "WebPage", "@id": "https://projects.angelsirlopu.dev/live-deck/es/#webpage", "url": "https://projects.angelsirlopu.dev/live-deck/es/", "name": "Live Deck: diapositivas que tu público puede responder", "inLanguage": "es-PE", "isPartOf": {"@id": "https://projects.angelsirlopu.dev/live-deck/#website"}, "about": {"@id": "https://projects.angelsirlopu.dev/live-deck/#software"}, "primaryImageOfPage": "https://projects.angelsirlopu.dev/live-deck/og-es.png"}, {"@type": "SoftwareApplication", "@id": "https://projects.angelsirlopu.dev/live-deck/#software", "name": "Live Deck", "alternateName": "Live Deck presentation player", "description": "Reproductor de presentaciones de código abierto para charlas que conversan con el público. Presentas desde una consola mientras el público te sigue desde su celular, responde quizzes, reacciona y chatea.", "url": "https://projects.angelsirlopu.dev/live-deck/", "image": "https://projects.angelsirlopu.dev/live-deck/og.png", "applicationCategory": "PresentationApplication", "operatingSystem": "Any (Node.js 24 or Docker)", "license": "https://opensource.org/license/mit", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://github.com/AngelSirlopuC#person"}, "sameAs": ["https://github.com/AngelSirlopuC/live-deck"]}, {"@type": "Person", "@id": "https://github.com/AngelSirlopuC#person", "name": "Angel Sirlopu", "url": "https://github.com/AngelSirlopuC", "sameAs": ["https://github.com/AngelSirlopuC"]}]}</script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Oswald:wght@500;600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;700&display=swap"
-    />
+    <link rel="preload" href="/fonts/bricolage-grotesque-normal-500-800.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans-normal-400-700.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="site">
     <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -33,7 +38,7 @@
           <a class="topbar-link hide-sm" href="#demo">Demo</a>
           <a class="topbar-link hide-xs" href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
           <nav class="lang-switch" aria-label="Idioma"><a class="lang-key" href="/live-deck/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a><a class="lang-key" href="/live-deck/es/" hreflang="es-PE" lang="es-PE" data-lang="es" aria-current="true" aria-label="Español">ES</a></nav>
-          <a class="key key-primary key-sm hide-sm" href="/live-deck/es/docs/quick-start/">Empezar</a>
+          <a class="key key-primary key-sm hide-sm" href="/live-deck/es/docs/quick-start/">Inicio rápido</a>
         </div>
       </nav>
     </header>
@@ -46,13 +51,14 @@
             Live Deck es un reproductor de código abierto para charlas que conversan con el público. Tú presentas desde una consola; el público te sigue desde su celular, responde quizzes, reacciona y chatea, sin instalar nada. Claude escribe el deck.
           </p>
           <div class="hero-actions">
-            <a class="key key-primary key-lg" href="/live-deck/es/docs/quick-start/">Empezar</a>
+            <a class="key key-primary key-lg" href="/live-deck/es/docs/quick-start/">Inicio rápido</a>
             <div class="command" data-copy="npx skills add AngelSirlopuC/live-deck">
               <code><span class="command-prompt" aria-hidden="true">$</span> npx skills add AngelSirlopuC/live-deck</code>
               <button class="key key-icon command-copy" type="button" aria-label="Copiar el comando de instalación"></button>
             </div>
           </div>
-          <button class="prompt-copy" type="button" data-copy="Crea un live deck sobre mi próxima charla, con un quiz cada cinco diapositivas, y valídalo.">Mejor copia un prompt para Claude</button>
+          <button class="prompt-copy" type="button" data-copy="Crea un live deck sobre mi próxima charla, con un quiz cada cinco diapositivas, y valídalo.">O copia un prompt para Claude</button>
+          <p class="hero-alt">¿Ya diseñaste tus diapositivas en PowerPoint, Keynote o Canva? <a href="/live-deck/es/docs/skill/#importar-diapositivas-disenadas">Expórtalas como imágenes e impórtalas</a>; Live Deck agrega el QR, los quizzes y el chat.</p>
         </div>
 
         <div class="studio" id="demo" aria-label="Demo interactiva de una sesión en vivo">
@@ -94,7 +100,7 @@
               </div>
             </div>
           </div>
-          <p class="studio-caption">Una sesión simulada que corre el renderer real de Live Deck. Es la misma consola y el mismo celular que verá tu público.</p>
+          <p class="studio-caption">Una sesión simulada que usa el motor de render real de Live Deck. Es la misma consola y el mismo celular que verá tu público.</p>
         </div>
       </section>
 
@@ -136,7 +142,7 @@
             <figcaption class="codeview-tab"><span>decks/site-demo-es/deck.json</span><span class="legend">json</span></figcaption>
             <pre class="codeview-body" data-role="code"></pre>
           </figure>
-          <div class="mon mon-file" data-role="file-stage" aria-label="Diapositiva renderizada"></div>
+          <div class="mon mon-file" data-role="file-stage" role="img" aria-label="Diapositiva renderizada"></div>
         </div>
       </section>
 
@@ -173,7 +179,7 @@
           </div>
           <div class="spec-row">
             <dt class="legend">Autoalojado</dt>
-            <dd>Un solo contenedor Docker detrás de Caddy. Unas 200 personas por sesión en un servidor pequeño.</dd>
+            <dd>Un solo contenedor Docker detrás de Caddy. Pensado para unas 200 personas por sesión en un servidor pequeño.</dd>
           </div>
         </dl>
       </section>
@@ -183,11 +189,11 @@
         <div class="faq-list">
           <details>
             <summary>¿Qué es Live Deck?</summary>
-            <p>Un reproductor de presentaciones que vuelve una charla de dos vías. Las diapositivas se sincronizan desde quien presenta hacia cada celular, con quizzes, efectos del puntero, reacciones y chat. Los decks son archivos JSON, normalmente escritos por Claude con la skill incluida.</p>
+            <p>Un reproductor de presentaciones que convierte tu charla en una conversación. Las diapositivas se sincronizan desde quien presenta hacia cada celular, con quizzes, efectos del puntero, reacciones y chat. Los decks son archivos JSON, normalmente escritos por Claude con la skill incluida.</p>
           </details>
           <details>
             <summary>¿En qué se diferencia de las herramientas de encuestas?</summary>
-            <p>Las herramientas de encuestas viven al costado de tus diapositivas, en otra pestaña. En Live Deck las diapositivas mismas son la superficie en vivo: el deck, el quiz y los gestos de tu puntero llegan a cada celular en tiempo real, y quien llega tarde puede revisar lo que pasó por su cuenta.</p>
+            <p>Las herramientas de encuestas viven al costado de tus diapositivas, en otra pestaña. En Live Deck las diapositivas mismas son la superficie en vivo: el deck, el quiz y los gestos de tu puntero llegan a cada celular en tiempo real, y quien llega tarde puede revisar lo que pasó por su cuenta. <a href="/live-deck/es/docs/compare/">Ver la comparación completa</a>.</p>
           </details>
           <details>
             <summary>¿El público tiene que instalar algo?</summary>
@@ -195,7 +201,7 @@
           </details>
           <details>
             <summary>¿Qué agentes pueden escribir decks?</summary>
-            <p>La skill incluida está pensada para Claude. El formato está documentado y el CLI valida cualquier archivo, así que cualquier agente que pueda editar archivos y correr comandos puede escribir un deck. Revisa <a href="/live-deck/es/docs/skill/">la skill</a> y <a href="/live-deck/es/docs/mcp/">por qué no hay servidor MCP</a>.</p>
+            <p>La skill incluida está pensada para Claude. El formato está documentado y la CLI valida cualquier archivo, así que cualquier agente que pueda editar archivos y correr comandos puede escribir un deck. Revisa <a href="/live-deck/es/docs/skill/">la skill</a> y <a href="/live-deck/es/docs/mcp/">por qué no hay servidor MCP</a>.</p>
           </details>
           <details>
             <summary>¿Tengo que escribir JSON a mano?</summary>
@@ -203,11 +209,11 @@
           </details>
           <details>
             <summary>¿Cuántas personas pueden unirse?</summary>
-            <p>Unas 200 personas por sesión en un servidor pequeño. Revisa <a href="/live-deck/es/docs/self-hosting/">autoalojamiento</a> para calcular la capacidad.</p>
+            <p>Está pensado para unas 200 personas por sesión en un servidor pequeño. Revisa <a href="/live-deck/es/docs/self-hosting/">autoalojamiento</a> para calcular la capacidad.</p>
           </details>
           <details>
             <summary>¿Es de código abierto?</summary>
-            <p>Sí, con licencia MIT. El código, la skill y estos docs están en <a href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>.</p>
+            <p>Sí, con licencia MIT. El código, la skill y esta documentación están en <a href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>.</p>
           </details>
         </div>
       </section>
@@ -231,6 +237,7 @@
           <a href="/live-deck/es/docs/">Docs</a>
           <a href="/live-deck/es/docs/quick-start/">Inicio rápido</a>
           <a href="/live-deck/es/docs/self-hosting/">Autoalojamiento</a>
+          <a href="/live-deck/es/docs/compare/">Comparar</a>
           <a href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
           <a href="https://github.com/AngelSirlopuC/live-deck/issues" rel="noopener">Issues</a>
         </nav>

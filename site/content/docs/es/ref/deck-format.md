@@ -90,7 +90,7 @@ Las diapositivas importadas (`live-deck import`) usan exactamente este campo: `"
 
 ### image
 
-- `src`: `https://…` o `assets/<path>` (caracteres `[A-Za-z0-9_\-./]`, sin `..`, máximo 500). Los archivos locales van en `decks/<id>/assets/`; el CLI falla si falta el archivo.
+- `src`: `https://…` o `assets/<path>` (caracteres `[A-Za-z0-9_\-./]`, sin `..`, máximo 500). Los archivos locales van en `decks/<id>/assets/`; la CLI falla si falta el archivo.
 - `alt`: string, obligatorio, máximo 300.
 - `fit`: `"contain"` \| `"cover"` (opcional).
 - `style`: solo `{ radius }`.
@@ -169,4 +169,4 @@ La respuesta y las notas se eliminan antes de que el deck llegue al público.
 
 ## Mensajes de validación
 
-El CLI imprime `path: message`, donde path es la ruta dentro del JSON (`slides.2.quiz.correctIndex: correctIndex must point to an option`). Corrige en esa ruta y vuelve a ejecutar.
+La CLI imprime `path: message`, donde path es la ruta dentro del JSON (`slides.2.quiz.correctIndex: correctIndex must point to an option`). Corrige en esa ruta y vuelve a ejecutar.

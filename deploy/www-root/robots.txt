@@ -1,0 +1,5 @@
+# projects.angelsirlopu.dev hosts one project per path. Everything is public.
+User-agent: *
+Allow: /
+
+Sitemap: https://projects.angelsirlopu.dev/live-deck/sitemap.xml

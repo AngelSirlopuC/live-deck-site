@@ -289,6 +289,7 @@ function mountFileSection() {
     const b = button("key key-sm preset", name, undefined, () => select(name));
     b.dataset.preset = name;
     b.setAttribute("role", "radio");
+    b.setAttribute("aria-checked", "false");
     picker.append(b);
   }
   // Presets pull their own web fonts; render only when the section is near.

@@ -30,9 +30,25 @@ export function bindLanguageSwitch(root: ParentNode = document) {
   );
 }
 
-/** On the English landing only: send first-time Spanish-speaking visitors to /es/. */
+const BOT = /bot|crawl|spider|slurp|preview|lighthouse|headless/i;
+
+/** True when the visitor arrived from another page of this site. */
+function cameFromSite(): boolean {
+  try {
+    return !!document.referrer && new URL(document.referrer).origin === location.origin;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * On the English landing only: send first-time Spanish-speaking visitors to /es/.
+ * Never for crawlers, for links followed inside the site, or for URLs that
+ * carry a query or a hash (someone linked to this exact view).
+ */
 export function suggestSpanish(spanishUrl: string) {
   if (locale !== "en" || stored()) return;
+  if (BOT.test(navigator.userAgent) || cameFromSite() || location.search || location.hash) return;
   const langs = navigator.languages?.length ? navigator.languages : [navigator.language];
   if (langs[0]?.toLowerCase().startsWith("es")) location.replace(spanishUrl);
 }

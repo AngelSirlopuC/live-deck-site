@@ -26,7 +26,7 @@ npm run dev:web      # Vite en :5180 (hace de proxy para /api, /decks, /ws)
 
 Abre `http://localhost:5180`, elige un deck, define un PIN y crea una sesión. La consola se abre con el QR de ingreso en la primera diapositiva.
 
-## 3. Agrega el skill y pide un deck
+## 3. Agrega la skill y pide un deck
 
 ```sh
 npx skills add AngelSirlopuC/live-deck   # instala skills/live-deck
@@ -38,7 +38,7 @@ Luego pídeselo a Claude, desde la raíz del repositorio:
 Crea un live deck sobre la inducción de nuevos colaboradores, con un quiz cada cinco diapositivas.
 ```
 
-El skill elige un preset de tema, escribe `decks/<id>/deck.json`, lo valida con la CLI y corrige todos los problemas. Al final te da la URL de la vista previa.
+La skill elige un preset de tema, escribe `decks/<id>/deck.json`, lo valida con la CLI y corrige todos los problemas. Al final te da la URL de la vista previa.
 
 ## 4. Ingresa desde los celulares
 

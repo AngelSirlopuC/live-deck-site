@@ -86,7 +86,33 @@
 
 .docs-main {
   min-width: 0;
-  padding: 40px 0 64px;
+  padding: 32px 0 64px;
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-bottom: 14px;
+  font-family: var(--font-legend);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.crumbs a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  color: var(--text);
+}
+
+.crumbs [aria-current] {
+  color: var(--text);
 }
 
 /* Prose ------------------------------------------------------------------- */

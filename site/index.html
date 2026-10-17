@@ -9,19 +9,24 @@
     <link rel="canonical" href="https://projects.angelsirlopu.dev/live-deck/" />
     <link rel="alternate" hreflang="en" href="https://projects.angelsirlopu.dev/live-deck/" />
     <link rel="alternate" hreflang="es-PE" href="https://projects.angelsirlopu.dev/live-deck/es/" />
+    <link rel="alternate" hreflang="es" href="https://projects.angelsirlopu.dev/live-deck/es/" />
     <link rel="alternate" hreflang="x-default" href="https://projects.angelsirlopu.dev/live-deck/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Live Deck: slides your audience can answer" />
     <meta property="og:description" content="Present from a console; the room follows, votes and reacts from their phones. No app to install." />
     <meta property="og:url" content="https://projects.angelsirlopu.dev/live-deck/" />
+    <meta name="author" content="Angel Sirlopu" />
+    <meta property="og:site_name" content="Live Deck" />
+    <meta property="og:image" content="https://projects.angelsirlopu.dev/live-deck/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://projects.angelsirlopu.dev/live-deck/og.png" />
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://projects.angelsirlopu.dev/live-deck/#website", "url": "https://projects.angelsirlopu.dev/live-deck/", "name": "Live Deck", "inLanguage": ["en", "es-PE"], "publisher": {"@id": "https://github.com/AngelSirlopuC#person"}}, {"@type": "WebPage", "@id": "https://projects.angelsirlopu.dev/live-deck/#webpage", "url": "https://projects.angelsirlopu.dev/live-deck/", "name": "Live Deck: slides your audience can answer", "inLanguage": "en", "isPartOf": {"@id": "https://projects.angelsirlopu.dev/live-deck/#website"}, "about": {"@id": "https://projects.angelsirlopu.dev/live-deck/#software"}, "primaryImageOfPage": "https://projects.angelsirlopu.dev/live-deck/og.png"}, {"@type": "SoftwareApplication", "@id": "https://projects.angelsirlopu.dev/live-deck/#software", "name": "Live Deck", "alternateName": "Live Deck presentation player", "description": "Open-source presentation player for talks that talk back. Present from a console while the audience follows on their phones, answers quizzes, reacts and chats.", "url": "https://projects.angelsirlopu.dev/live-deck/", "image": "https://projects.angelsirlopu.dev/live-deck/og.png", "applicationCategory": "PresentationApplication", "operatingSystem": "Any (Node.js 24 or Docker)", "license": "https://opensource.org/license/mit", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@id": "https://github.com/AngelSirlopuC#person"}, "sameAs": ["https://github.com/AngelSirlopuC/live-deck"]}, {"@type": "Person", "@id": "https://github.com/AngelSirlopuC#person", "name": "Angel Sirlopu", "url": "https://github.com/AngelSirlopuC", "sameAs": ["https://github.com/AngelSirlopuC"]}]}</script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Oswald:wght@500;600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;700&display=swap"
-    />
+    <link rel="preload" href="/fonts/bricolage-grotesque-normal-500-800.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans-normal-400-700.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body class="site">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -33,7 +38,7 @@
           <a class="topbar-link hide-sm" href="#demo">Demo</a>
           <a class="topbar-link hide-xs" href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
           <nav class="lang-switch" aria-label="Language"><a class="lang-key" href="/live-deck/" hreflang="en" lang="en" data-lang="en" aria-current="true" aria-label="English">EN</a><a class="lang-key" href="/live-deck/es/" hreflang="es-PE" lang="es-PE" data-lang="es" aria-label="Español">ES</a></nav>
-          <a class="key key-primary key-sm hide-sm" href="/live-deck/docs/quick-start/">Get started</a>
+          <a class="key key-primary key-sm hide-sm" href="/live-deck/docs/quick-start/">Quick start</a>
         </div>
       </nav>
     </header>
@@ -46,13 +51,14 @@
             Live Deck is an open-source player for talks that talk back. You present from a console; the audience follows on their phones, answers quizzes, reacts and chats, without installing anything. Claude writes the deck.
           </p>
           <div class="hero-actions">
-            <a class="key key-primary key-lg" href="/live-deck/docs/quick-start/">Get started</a>
+            <a class="key key-primary key-lg" href="/live-deck/docs/quick-start/">Quick start</a>
             <div class="command" data-copy="npx skills add AngelSirlopuC/live-deck">
               <code><span class="command-prompt" aria-hidden="true">$</span> npx skills add AngelSirlopuC/live-deck</code>
               <button class="key key-icon command-copy" type="button" aria-label="Copy install command"></button>
             </div>
           </div>
           <button class="prompt-copy" type="button" data-copy="Create a live deck about my next talk, with a quiz every five slides, and validate it.">Copy a prompt for Claude instead</button>
+          <p class="hero-alt">Already designed your slides in PowerPoint, Keynote or Canva? <a href="/live-deck/docs/skill/#importing-designed-slides">Export them as images and import them</a>; Live Deck adds the QR, quizzes and chat.</p>
         </div>
 
         <div class="studio" id="demo" aria-label="Interactive demo of a live session">
@@ -136,7 +142,7 @@
             <figcaption class="codeview-tab"><span>decks/site-demo/deck.json</span><span class="legend">json</span></figcaption>
             <pre class="codeview-body" data-role="code"></pre>
           </figure>
-          <div class="mon mon-file" data-role="file-stage" aria-label="Rendered slide"></div>
+          <div class="mon mon-file" data-role="file-stage" role="img" aria-label="Rendered slide"></div>
         </div>
       </section>
 
@@ -148,7 +154,7 @@
             <dd>Live bars or secret until you reveal, optional timer and leaderboard. Votes by tap or keyboard (A–F, 1–6). Anonymous attendees get a creative alias.</dd>
           </div>
           <div class="spec-row">
-            <dt class="legend">En vivo / Explorar</dt>
+            <dt class="legend">En vivo / Explorar (Live / Browse)</dt>
             <dd>The audience follows you in real time, or browses back through the slides already shown and returns with one tap.</dd>
           </div>
           <div class="spec-row">
@@ -173,7 +179,7 @@
           </div>
           <div class="spec-row">
             <dt class="legend">Self-hosted</dt>
-            <dd>One Docker container behind Caddy. About 200 attendees per session on one small server.</dd>
+            <dd>One Docker container behind Caddy. Designed for about 200 attendees per session on one small server.</dd>
           </div>
         </dl>
       </section>
@@ -187,7 +193,7 @@
           </details>
           <details>
             <summary>How is it different from poll tools?</summary>
-            <p>Poll tools sit beside your slides in another tab. In Live Deck the slides themselves are the live surface: the deck, the quiz and your pointer gestures reach every phone in real time, and late attendees can browse back on their own.</p>
+            <p>Poll tools sit beside your slides in another tab. In Live Deck the slides themselves are the live surface: the deck, the quiz and your pointer gestures reach every phone in real time, and late attendees can browse back on their own. <a href="/live-deck/docs/compare/">Full comparison</a>.</p>
           </details>
           <details>
             <summary>Does the audience need to install anything?</summary>
@@ -203,7 +209,7 @@
           </details>
           <details>
             <summary>How many people can join?</summary>
-            <p>About 200 attendees per session on one small server. See <a href="/live-deck/docs/self-hosting/">self-hosting</a> for sizing.</p>
+            <p>It is designed for about 200 attendees per session on one small server. See <a href="/live-deck/docs/self-hosting/">self-hosting</a> for sizing.</p>
           </details>
           <details>
             <summary>Is it open source?</summary>
@@ -231,6 +237,7 @@
           <a href="/live-deck/docs/">Docs</a>
           <a href="/live-deck/docs/quick-start/">Quick start</a>
           <a href="/live-deck/docs/self-hosting/">Self-hosting</a>
+          <a href="/live-deck/docs/compare/">Compare</a>
           <a href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
           <a href="https://github.com/AngelSirlopuC/live-deck/issues" rel="noopener">Issues</a>
         </nav>

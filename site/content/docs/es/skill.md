@@ -1,7 +1,7 @@
 <!-- source: site/content/docs/skill.md sha256:db060b1f6296 -->
 # Skill de Claude
 
-El skill `live-deck` le enseña a Claude a convertir una idea, un esquema, unas notas o el texto pegado de un .pptx en un `deck.json` válido, validarlo con la CLI y corregir todos los problemas.
+La skill `live-deck` le enseña a Claude a convertir una idea, un esquema, unas notas o el texto pegado de un .pptx en un `deck.json` válido, validarlo con la CLI y corregir todos los problemas.
 
 ```sh
 npx skills add AngelSirlopuC/live-deck   # instala skills/live-deck
@@ -13,7 +13,7 @@ Luego pídeselo desde la raíz del repositorio de Live Deck:
 Crea un live deck sobre contraseñas seguras, en español, con un quiz.
 ```
 
-## Qué hace el skill
+## Qué hace la skill
 
 1. **Planifica** una idea por diapositiva, de 5 a 25 diapositivas para una charla normal, y un quiz cada 4 a 8 diapositivas cuando el público puede responder algo.
 2. **Dirige el arte**: elige exactamente un [preset de tema](/docs/themes/) según el tema, el público y el lugar, y te dice por qué.
@@ -49,4 +49,4 @@ El QR de ingreso se superpone en la diapositiva 1 (abajo a la derecha, en un rec
 
 ## Otros agentes
 
-El skill está pensado para Claude, pero nada en el formato es exclusivo de Claude: el [formato del deck](/docs/deck-format/) está documentado y la [CLI](/docs/cli/) valida cualquier archivo, así que cualquier agente que pueda editar archivos y ejecutar una terminal puede escribir un deck. Consulta [Agentes y MCP](/docs/mcp/) para saber por qué hoy no hay un servidor MCP.
+La skill está pensada para Claude, pero nada en el formato es exclusivo de Claude: el [formato del deck](/docs/deck-format/) está documentado y la [CLI](/docs/cli/) valida cualquier archivo, así que cualquier agente que pueda editar archivos y ejecutar una terminal puede escribir un deck. Consulta [Agentes y MCP](/docs/mcp/) para saber por qué hoy no hay un servidor MCP.

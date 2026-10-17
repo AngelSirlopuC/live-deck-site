@@ -177,7 +177,7 @@ Las diapositivas importadas con `live-deck import` son imágenes completas dise�
   "elements": [] }
 ```
 
-La diapositiva 1 también lleva encima de la imagen el QR para unirse. La importación lo coloca abajo a la derecha sobre un recuadro blanco; conserva la caja que escribió el CLI y edítala solo para mover el QR fuera de contenido importante (geometría de ejemplo):
+La diapositiva 1 también lleva encima de la imagen el QR para unirse. La importación lo coloca abajo a la derecha sobre un recuadro blanco; conserva la caja que escribió la CLI y edítala solo para mover el QR fuera de contenido importante (geometría de ejemplo):
 
 ```json
 { "id": "s01", "notes": "Da la bienvenida y pide que escaneen el QR.",

@@ -10,11 +10,11 @@
   "scripts": {
     "docs": "node site/scripts/build-docs.ts",
     "dev": "npm run docs && vite",
-    "build": "npm run validate:deck && npm run docs && vite build && node site/scripts/check-links.ts",
+    "build": "npm run validate:deck && npm run docs && vite build && node site/scripts/build-docs.ts --extras dist-site && node site/scripts/check-links.ts",
     "preview": "vite preview",
     "validate:deck": "node live-deck/bin/live-deck.ts validate decks/site-demo && node live-deck/bin/live-deck.ts validate decks/site-demo-es",
     "typecheck": "tsc --noEmit",
-    "deploy": "npm run build && rsync -az --delete dist-site/ root@195.200.7.40:/opt/projects/www/live-deck/"
+    "deploy": "npm run build && rsync -az --delete dist-site/ root@195.200.7.40:/opt/projects/www/live-deck/ && rsync -az deploy/www-root/robots.txt root@195.200.7.40:/opt/projects/www/ && rsync -az dist-site/llms.txt root@195.200.7.40:/opt/projects/www/llms.txt && rsync -az --inplace deploy/nginx.conf deploy/compose.yaml root@195.200.7.40:/opt/projects/ && ssh root@195.200.7.40 'cd /opt/projects && docker compose exec -T projects-web nginx -t && docker compose exec -T projects-web nginx -s reload'"
   },
   "dependencies": {
     "lucide": "1.49.0",

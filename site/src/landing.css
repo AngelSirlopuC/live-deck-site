@@ -64,7 +64,8 @@ section {
 }
 
 .prompt-copy {
-  margin-top: 14px;
+  min-height: 44px;
+  margin-top: 8px;
   padding: 6px 0;
   border: 0;
   background: none;
@@ -83,6 +84,15 @@ section {
 
 .prompt-copy.is-copied {
   color: var(--signal);
+}
+
+.hero-alt {
+  max-width: 34em;
+  margin: 6px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--seam);
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 /* Console: the desk, the program monitor and the audience phone ----------- */

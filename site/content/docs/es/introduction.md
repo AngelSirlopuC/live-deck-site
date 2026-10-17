@@ -7,7 +7,7 @@ A diferencia de las herramientas de encuestas que van al costado de las diaposit
 
 ## Cómo funciona una charla
 
-1. **Escribe un deck.** Un deck es un archivo JSON en `decks/<id>/deck.json`. La forma más fácil es pedírselo a Claude con el [skill](/docs/skill/) incluido. También puedes [importar diapositivas que diseñaste](/docs/skill/#importar-diapositivas-disenadas) en PowerPoint, Keynote, Google Slides, Canva o Figma.
+1. **Escribe un deck.** Un deck es un archivo JSON en `decks/<id>/deck.json`. La forma más fácil es pedírselo a Claude con la [skill](/docs/skill/) incluida. También puedes [importar diapositivas que diseñaste](/docs/skill/#importar-diapositivas-disenadas) en PowerPoint, Keynote, Google Slides, Canva o Figma.
 2. **Ensaya.** Abre `/preview/<id>` para recorrer el deck a solas.
 3. **Sal en vivo.** Define un PIN de 4 a 8 dígitos y abre la consola. La primera diapositiva muestra un código QR; los celulares lo escanean e ingresan con un nombre o de forma anónima.
 4. **Cierra.** Cuando terminas la sesión puedes descargar un resumen. Luego los datos se eliminan.

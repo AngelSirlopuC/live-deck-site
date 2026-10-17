@@ -24,4 +24,4 @@ Deploy a new build:
 npm run deploy      # build, link check, rsync to /opt/projects/www/live-deck/
 ```
 
-No container restart is needed: nginx serves the new files immediately.
+No container restart is needed: nginx serves the new files immediately, and the script reloads nginx after copying its config. The config is copied with `rsync --inplace` because Docker binds `nginx.conf` as a single file: replacing the file (a new inode) would leave the container reading the old one.

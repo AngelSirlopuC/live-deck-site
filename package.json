@@ -1,0 +1,32 @@
+{
+  "name": "live-deck-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing page and docs for Live Deck, served at https://projects.angelsirlopu.dev/live-deck/",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "docs": "node site/scripts/build-docs.ts",
+    "dev": "npm run docs && vite",
+    "build": "npm run validate:deck && npm run docs && vite build && node site/scripts/check-links.ts",
+    "preview": "vite preview",
+    "validate:deck": "node live-deck/bin/live-deck.ts validate decks/site-demo",
+    "typecheck": "tsc --noEmit",
+    "deploy": "npm run build && rsync -az --delete dist-site/ root@195.200.7.40:/opt/projects/www/live-deck/"
+  },
+  "dependencies": {
+    "lucide": "1.49.0",
+    "qrcode": "1.5.4",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/qrcode": "1.5.6",
+    "marked": "18.0.14",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  },
+  "license": "MIT"
+}

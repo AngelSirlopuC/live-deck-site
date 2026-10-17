@@ -1,0 +1,3 @@
+[submodule "live-deck"]
+	path = live-deck
+	url = https://github.com/AngelSirlopuC/live-deck.git

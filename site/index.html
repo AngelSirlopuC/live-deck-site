@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#14110d" />
+    <title>Live Deck: slides your audience can answer</title>
+    <meta name="description" content="Open-source presentation player for talks that talk back. Present from a console while the audience follows on their phones, answers quizzes, reacts and chats. Decks are JSON files Claude writes for you." />
+    <link rel="canonical" href="https://projects.angelsirlopu.dev/live-deck/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Live Deck: slides your audience can answer" />
+    <meta property="og:description" content="Present from a console; the room follows, votes and reacts from their phones. No app to install." />
+    <meta property="og:url" content="https://projects.angelsirlopu.dev/live-deck/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Oswald:wght@500;600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;700&display=swap"
+    />
+  </head>
+  <body class="site">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <nav class="topbar-inner" aria-label="Main">
+        <a class="brand" href="/live-deck/" aria-label="Live Deck home"><span class="brand-led" aria-hidden="true"></span>Live Deck</a>
+        <div class="topbar-links">
+          <a class="topbar-link" href="/live-deck/docs/">Docs</a>
+          <a class="topbar-link hide-sm" href="#demo">Demo</a>
+          <a class="topbar-link" href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
+          <a class="key key-primary key-sm" href="/live-deck/docs/quick-start/">Get started</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Your slides, live on every phone in the room.</h1>
+          <p class="hero-lead">
+            Live Deck is an open-source player for talks that talk back. You present from a console; the audience follows on their phones, answers quizzes, reacts and chats, without installing anything. Claude writes the deck.
+          </p>
+          <div class="hero-actions">
+            <a class="key key-primary key-lg" href="/live-deck/docs/quick-start/">Get started</a>
+            <div class="command" data-copy="npx skills add AngelSirlopuC/live-deck">
+              <code><span class="command-prompt" aria-hidden="true">$</span> npx skills add AngelSirlopuC/live-deck</code>
+              <button class="key key-icon command-copy" type="button" aria-label="Copy install command"></button>
+            </div>
+          </div>
+          <button class="prompt-copy" type="button" data-copy="Create a live deck about my next talk, with a quiz every five slides, and validate it.">Copy a prompt for Claude instead</button>
+        </div>
+
+        <div class="studio" id="demo" aria-label="Interactive demo of a live session">
+          <div class="studio-desk">
+            <div class="studio-strip">
+              <span class="lamp" data-state="standby" data-role="lamp">En espera</span>
+              <span class="legend">Program</span>
+              <span class="spacer"></span>
+              <span class="studio-meter" aria-live="polite"><span class="legend">Slide</span> <span class="mono" data-role="position">1 / 5</span></span>
+              <span class="studio-meter"><span class="studio-dot" aria-hidden="true"></span><span class="mono" data-role="audience">0</span> <span class="legend">phones</span></span>
+            </div>
+            <div class="mon-wrap">
+              <div class="mon mon-program" data-role="program"></div>
+              <p class="mon-hint" data-role="hint">Click the slide to ripple on every screen</p>
+            </div>
+            <div class="transport" role="group" aria-label="Presenter controls">
+              <button class="key key-icon" type="button" data-action="prev" aria-label="Previous"></button>
+              <button class="key key-onair transport-main" type="button" data-action="next">Go on air</button>
+              <span class="studio-gap" aria-hidden="true"></span>
+              <button class="key" type="button" data-action="focus" aria-pressed="false">Focus</button>
+              <button class="key" type="button" data-action="zoom" aria-pressed="false">Zoom</button>
+              <button class="key" type="button" data-action="reveal" hidden>Reveal</button>
+            </div>
+          </div>
+
+          <div class="phone" aria-label="Audience phone">
+            <div class="phone-screen">
+              <div class="phone-bar">
+                <span class="lamp lamp-sm" data-state="off" data-role="phone-lamp">Sin señal</span>
+                <span class="phone-title">Site demo</span>
+              </div>
+              <div class="phone-stage" data-role="phone-stage"></div>
+              <div class="phone-desk">
+                <div class="switch" role="group" aria-label="View mode">
+                  <button class="key key-switch" type="button" data-mode="live" aria-pressed="true">En vivo</button>
+                  <button class="key key-switch" type="button" data-mode="explore" aria-pressed="false">Explorar</button>
+                </div>
+                <div class="phone-panel" data-role="phone-panel"></div>
+              </div>
+            </div>
+          </div>
+          <p class="studio-caption">A simulated session running the real Live Deck renderer. The console and phone keep the product&rsquo;s Spanish labels.</p>
+        </div>
+      </section>
+
+      <section class="steps" aria-labelledby="steps-title">
+        <h2 id="steps-title" class="section-title">Three steps to a live talk.</h2>
+        <ol class="steps-list">
+          <li class="step">
+            <span class="step-n mono" aria-hidden="true">1</span>
+            <h3>Install the skill</h3>
+            <p>One command adds the Live Deck authoring skill to Claude.</p>
+            <div class="well-code" data-copy="npx skills add AngelSirlopuC/live-deck"><code>npx skills add AngelSirlopuC/live-deck</code></div>
+          </li>
+          <li class="step">
+            <span class="step-n mono" aria-hidden="true">2</span>
+            <h3>Ask for a deck</h3>
+            <p>Claude picks a theme, writes <code>decks/&lt;id&gt;/deck.json</code> and fixes it until the validator says OK.</p>
+            <div class="well-code"><code>Create a live deck about our Q3 launch</code></div>
+          </li>
+          <li class="step">
+            <span class="step-n mono" aria-hidden="true">3</span>
+            <h3>Go on air</h3>
+            <p>Set a PIN, open the console and put the join QR on the projector. Phones scan and follow.</p>
+            <div class="well-code"><code>npm run dev:server &amp;&amp; npm run dev:web</code></div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="file" aria-labelledby="file-title">
+        <div class="file-copy">
+          <h2 id="file-title" class="section-title">A slide is a file.</h2>
+          <p>
+            Decks are plain JSON: normalized boxes on a 16:9 canvas, fragments for step-by-step reveals, quiz slides and speaker notes. The schema is strict, so an agent gets exact error paths instead of a broken talk.
+          </p>
+          <p>Pick a preset and the same slide changes its whole look: colors, fonts, cards and chart palette.</p>
+          <div class="presets" role="radiogroup" aria-label="Theme preset" data-role="presets"></div>
+        </div>
+        <div class="file-split">
+          <figure class="codeview">
+            <figcaption class="codeview-tab"><span>decks/site-demo/deck.json</span><span class="legend">json</span></figcaption>
+            <pre class="codeview-body" data-role="code"></pre>
+          </figure>
+          <div class="mon mon-file" data-role="file-stage" aria-label="Rendered slide"></div>
+        </div>
+      </section>
+
+      <section class="specs" aria-labelledby="specs-title">
+        <h2 id="specs-title" class="section-title">Built for the room, not for the slide editor.</h2>
+        <dl class="spec-sheet">
+          <div class="spec-row">
+            <dt class="legend">Quizzes</dt>
+            <dd>Live bars or secret until you reveal, optional timer and leaderboard. Votes by tap or keyboard (A–F, 1–6). Anonymous attendees get a creative alias.</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="legend">En vivo / Explorar</dt>
+            <dd>The audience follows you in real time, or browses back through the slides already shown and returns with one tap.</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="legend">Pointer effects</dt>
+            <dd>Ripple, focus and zoom, mirrored on the projector and every phone.</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="legend">Reactions and chat</dt>
+            <dd>Floating reactions among the audience; text and GIPHY sticker chat with moderation. You opt in to see either on your screen.</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="legend">Your own designs</dt>
+            <dd>Export slides as images from PowerPoint, Keynote, Google Slides, Canva or Figma. Live Deck adds the join QR, quizzes on your designed options, chat and effects.</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="legend">Presenter in control</dt>
+            <dd>A private console link plus PIN with lockout, a projector screen and a phone remote. Notes and quiz answers never reach the audience before the reveal.</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="legend">Ephemeral</dt>
+            <dd>Sessions live in memory. When you end one, download the summary; then the data is deleted.</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="legend">Self-hosted</dt>
+            <dd>One Docker container behind Caddy. About 200 attendees per session on one small server.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" class="section-title">Questions</h2>
+        <div class="faq-list">
+          <details>
+            <summary>What is Live Deck?</summary>
+            <p>A view-only presentation player that makes a talk two-way. Slides sync from the presenter to every phone, with quizzes, pointer effects, reactions and chat. Decks are JSON files, usually written by Claude with the bundled skill.</p>
+          </details>
+          <details>
+            <summary>How is it different from poll tools?</summary>
+            <p>Poll tools sit beside your slides in another tab. In Live Deck the slides themselves are the live surface: the deck, the quiz and your pointer gestures reach every phone in real time, and late attendees can browse back on their own.</p>
+          </details>
+          <details>
+            <summary>Does the audience need to install anything?</summary>
+            <p>No. They scan the QR on the first slide and join in the phone's browser, with a first name or anonymously.</p>
+          </details>
+          <details>
+            <summary>Which agents can write decks?</summary>
+            <p>The bundled skill targets Claude. The format is documented and the CLI validates any file, so any agent that can edit files and run a shell can write a deck. See <a href="/live-deck/docs/skill/">the skill</a> and <a href="/live-deck/docs/mcp/">why there is no MCP server</a>.</p>
+          </details>
+          <details>
+            <summary>Do I have to write JSON by hand?</summary>
+            <p>No. Ask Claude for a deck, or design your slides in any tool, export them as images and run <code>live-deck import</code>.</p>
+          </details>
+          <details>
+            <summary>How many people can join?</summary>
+            <p>About 200 attendees per session on one small server. See <a href="/live-deck/docs/self-hosting/">self-hosting</a> for sizing.</p>
+          </details>
+          <details>
+            <summary>Is it open source?</summary>
+            <p>Yes, MIT licensed. The code, the skill and these docs live on <a href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="close" aria-labelledby="close-title">
+        <h2 id="close-title">Put your next talk on air.</h2>
+        <div class="hero-actions close-actions">
+          <a class="key key-primary key-lg" href="/live-deck/docs/">Read the docs</a>
+          <div class="command" data-copy="npx skills add AngelSirlopuC/live-deck">
+            <code><span class="command-prompt" aria-hidden="true">$</span> npx skills add AngelSirlopuC/live-deck</code>
+            <button class="key key-icon command-copy" type="button" aria-label="Copy install command"></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <a class="brand" href="/live-deck/"><span class="brand-led" aria-hidden="true"></span>Live Deck</a>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="/live-deck/docs/">Docs</a>
+          <a href="/live-deck/docs/quick-start/">Quick start</a>
+          <a href="/live-deck/docs/self-hosting/">Self-hosting</a>
+          <a href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
+          <a href="https://github.com/AngelSirlopuC/live-deck/issues" rel="noopener">Issues</a>
+        </nav>
+        <p class="footer-note">MIT licensed. Built by <a href="https://github.com/AngelSirlopuC" rel="noopener">Angel Sirlopu</a>.</p>
+      </div>
+    </footer>
+    <script type="module" src="/src/landing.ts"></script>
+  </body>
+</html>

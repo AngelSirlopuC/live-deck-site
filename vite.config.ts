@@ -10,34 +10,35 @@ import { parseDeck } from "./live-deck/shared/deck.ts";
 
 export const SITE_BASE = "/live-deck/";
 export const SITE_ORIGIN = "https://projects.angelsirlopu.dev";
-const DEMO_DECK = "site-demo";
-const DEMO_JOIN_URL = `${SITE_ORIGIN}${SITE_BASE}docs/`;
+/** Demo deck per site locale; the QR on slide 1 opens that locale's docs. */
+const DEMO_DECKS = { en: "site-demo", es: "site-demo-es" } as const;
+const docsUrl = (locale: keyof typeof DEMO_DECKS) => `${SITE_ORIGIN}${SITE_BASE}${locale === "en" ? "" : `${locale}/`}docs/`;
 
 /**
- * `virtual:demo-deck` exposes the demo deck already reduced to its public
+ * `virtual:demo-deck` exposes each demo deck already reduced to its public
  * projection, so speaker notes and quiz answers never reach the bundle.
- * The answer index is exported separately for the simulated reveal.
+ * The answer indexes are exported separately for the simulated reveal.
  */
 function demoDeck(): Plugin {
   const id = "virtual:demo-deck";
   const resolved = "\0" + id;
-  const file = resolve("decks", DEMO_DECK, "deck.json");
   return {
     name: "site-demo-deck",
     resolveId: (source) => (source === id ? resolved : null),
     async load(source) {
       if (source !== resolved) return null;
-      this.addWatchFile(file);
-      const parsed = parseDeck(JSON.parse(readFileSync(file, "utf8")));
-      if (!parsed.ok) throw new Error(`decks/${DEMO_DECK}: ${parsed.error}`);
-      const answers = Object.fromEntries(parsed.deck.slides.flatMap((s) => (s.quiz ? [[s.id, s.quiz.correctIndex]] : [])));
-      const qrSvg = await QRCode.toString(DEMO_JOIN_URL, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#111111", light: "#ffffff" } });
-      return [
-        `export const deck = ${JSON.stringify(publicDeck(parsed.deck))};`,
-        `export const answers = ${JSON.stringify(answers)};`,
-        `export const joinUrl = ${JSON.stringify(DEMO_JOIN_URL)};`,
-        `export const qrSvg = ${JSON.stringify(qrSvg)};`,
-      ].join("\n");
+      const demos: Record<string, unknown> = {};
+      for (const [locale, dir] of Object.entries(DEMO_DECKS) as [keyof typeof DEMO_DECKS, string][]) {
+        const file = resolve("decks", dir, "deck.json");
+        this.addWatchFile(file);
+        const parsed = parseDeck(JSON.parse(readFileSync(file, "utf8")));
+        if (!parsed.ok) throw new Error(`decks/${dir}: ${parsed.error}`);
+        const answers = Object.fromEntries(parsed.deck.slides.flatMap((s) => (s.quiz ? [[s.id, s.quiz.correctIndex]] : [])));
+        const joinUrl = docsUrl(locale);
+        const qrSvg = await QRCode.toString(joinUrl, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#111111", light: "#ffffff" } });
+        demos[locale] = { deck: publicDeck(parsed.deck), answers, joinUrl, qrSvg };
+      }
+      return `export const demos = ${JSON.stringify(demos)};`;
     },
   };
 }

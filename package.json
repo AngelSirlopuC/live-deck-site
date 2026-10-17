@@ -12,7 +12,7 @@
     "dev": "npm run docs && vite",
     "build": "npm run validate:deck && npm run docs && vite build && node site/scripts/check-links.ts",
     "preview": "vite preview",
-    "validate:deck": "node live-deck/bin/live-deck.ts validate decks/site-demo",
+    "validate:deck": "node live-deck/bin/live-deck.ts validate decks/site-demo && node live-deck/bin/live-deck.ts validate decks/site-demo-es",
     "typecheck": "tsc --noEmit",
     "deploy": "npm run build && rsync -az --delete dist-site/ root@195.200.7.40:/opt/projects/www/live-deck/"
   },

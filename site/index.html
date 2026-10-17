@@ -7,6 +7,10 @@
     <title>Live Deck: slides your audience can answer</title>
     <meta name="description" content="Open-source presentation player for talks that talk back. Present from a console while the audience follows on their phones, answers quizzes, reacts and chats. Decks are JSON files Claude writes for you." />
     <link rel="canonical" href="https://projects.angelsirlopu.dev/live-deck/" />
+    <link rel="alternate" hreflang="en" href="https://projects.angelsirlopu.dev/live-deck/" />
+    <link rel="alternate" hreflang="es-PE" href="https://projects.angelsirlopu.dev/live-deck/es/" />
+    <link rel="alternate" hreflang="x-default" href="https://projects.angelsirlopu.dev/live-deck/" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Live Deck: slides your audience can answer" />
     <meta property="og:description" content="Present from a console; the room follows, votes and reacts from their phones. No app to install." />
@@ -27,8 +31,9 @@
         <div class="topbar-links">
           <a class="topbar-link" href="/live-deck/docs/">Docs</a>
           <a class="topbar-link hide-sm" href="#demo">Demo</a>
-          <a class="topbar-link" href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
-          <a class="key key-primary key-sm" href="/live-deck/docs/quick-start/">Get started</a>
+          <a class="topbar-link hide-xs" href="https://github.com/AngelSirlopuC/live-deck" rel="noopener">GitHub</a>
+          <nav class="lang-switch" aria-label="Language"><a class="lang-key" href="/live-deck/" hreflang="en" lang="en" data-lang="en" aria-current="true" aria-label="English">EN</a><a class="lang-key" href="/live-deck/es/" hreflang="es-PE" lang="es-PE" data-lang="es" aria-label="Español">ES</a></nav>
+          <a class="key key-primary key-sm hide-sm" href="/live-deck/docs/quick-start/">Get started</a>
         </div>
       </nav>
     </header>
@@ -56,7 +61,7 @@
               <span class="lamp" data-state="standby" data-role="lamp">En espera</span>
               <span class="legend">Program</span>
               <span class="spacer"></span>
-              <span class="studio-meter" aria-live="polite"><span class="legend">Slide</span> <span class="mono" data-role="position">1 / 5</span></span>
+              <span class="studio-meter" aria-live="polite"><span class="legend meter-label">Slide</span> <span class="mono" data-role="position">1 / 5</span></span>
               <span class="studio-meter"><span class="studio-dot" aria-hidden="true"></span><span class="mono" data-role="audience">0</span> <span class="legend">phones</span></span>
             </div>
             <div class="mon-wrap">

@@ -3,7 +3,9 @@ import "../../live-deck/web/src/styles/chrome.css";
 import "./site.css";
 import "./docs.css";
 import { bindCopyButtons } from "./copy.ts";
+import { bindLanguageSwitch } from "./lang.ts";
 
+bindLanguageSwitch();
 bindCopyButtons(document);
 
 // Mobile: the sidebar folds behind the Menu key.

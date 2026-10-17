@@ -265,3 +265,42 @@ body[data-onair] .brand-led {
     margin-left: 0;
   }
 }
+
+/* Language switch: a two-position key tray, like the En vivo / Explorar switch. */
+.lang-switch {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid var(--seam);
+  background: var(--well);
+}
+
+.lang-key {
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  min-height: 32px;
+  padding: 0 8px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  font-family: var(--font-legend);
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.lang-key:hover {
+  color: var(--text);
+}
+
+.lang-key[aria-current="true"] {
+  background: linear-gradient(180deg, var(--amber-hi), var(--amber));
+  border-color: var(--amber-edge);
+  color: var(--amber-ink);
+  font-weight: 600;
+  box-shadow: 0 2px 0 #0a0806;
+}

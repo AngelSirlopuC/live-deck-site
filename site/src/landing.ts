@@ -3,7 +3,7 @@ import "../../live-deck/web/src/styles/stage.css";
 import "../../live-deck/web/src/styles/chrome.css";
 import "./site.css";
 import "./landing.css";
-import { answers, deck, joinUrl, qrSvg } from "virtual:demo-deck";
+import { demos } from "virtual:demo-deck";
 import type { PublicDeck } from "../../live-deck/shared/deck-core.ts";
 import type { PersistentEffect } from "../../live-deck/shared/effects.ts";
 import { nextPosition, prevPosition, type Position } from "../../live-deck/shared/nav.ts";
@@ -13,10 +13,19 @@ import { StageView } from "../../live-deck/web/src/render/stage-view.ts";
 import { icon } from "../../live-deck/web/src/ui/icons.ts";
 import { createReactionBar, floatReactions } from "../../live-deck/web/src/ui/reactions.ts";
 import { bindCopyButtons } from "./copy.ts";
+import { bindLanguageSwitch, locale, suggestSpanish, t } from "./lang.ts";
+
+const { deck, answers, joinUrl, qrSvg } = demos[locale];
+const TEXT = t({
+  en: { next: "Next", hint: "Click the slide to ripple on every screen" },
+  es: { next: "Siguiente", hint: "Haz clic en la diapositiva para señalar en todas las pantallas" },
+});
 
 const $ = <T extends HTMLElement = HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector<T>(sel)!;
 const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+suggestSpanish("/live-deck/es/");
+bindLanguageSwitch();
 bindCopyButtons(document);
 mountSession();
 mountFileSection();
@@ -135,8 +144,8 @@ function mountSession() {
     onAir = true;
     document.body.dataset.onair = "";
     nextKey.className = "key key-primary transport-main";
-    nextKey.textContent = "Next";
-    hint.textContent = "Click the slide to ripple on every screen";
+    nextKey.textContent = TEXT.next;
+    hint.textContent = TEXT.hint;
     audience.textContent = "38";
     paint();
   }

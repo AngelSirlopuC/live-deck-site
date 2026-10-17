@@ -1,4 +1,10 @@
 import { icon } from "../../live-deck/web/src/ui/icons.ts";
+import { t } from "./lang.ts";
+
+const TEXT = t({
+  en: { copy: "Copy", copied: "Copied", announced: "Copied to clipboard" },
+  es: { copy: "Copiar", copied: "Copiado", announced: "Copiado al portapapeles" },
+});
 
 const CHECK = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
 
@@ -19,7 +25,7 @@ export function bindCopyButtons(root: ParentNode) {
       trigger = document.createElement("button");
       trigger.type = "button";
       trigger.className = "key key-icon command-copy";
-      trigger.setAttribute("aria-label", "Copy");
+      trigger.setAttribute("aria-label", TEXT.copy);
       el.append(trigger);
     }
     const isIconKey = trigger.classList.contains("command-copy");
@@ -31,11 +37,11 @@ export function bindCopyButtons(root: ParentNode) {
       } catch {
         return;
       }
-      status.textContent = "Copied to clipboard";
+      status.textContent = TEXT.announced;
       trigger.classList.add("is-copied");
       if (isIconKey) trigger.innerHTML = CHECK;
       else trigger.dataset.label = trigger.textContent ?? "";
-      if (!isIconKey) trigger.textContent = "Copied";
+      if (!isIconKey) trigger.textContent = TEXT.copied;
       window.setTimeout(() => {
         trigger.classList.remove("is-copied");
         if (isIconKey) trigger.innerHTML = original;

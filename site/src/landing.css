@@ -690,8 +690,13 @@ body[data-onair] .mon-program {
 }
 
 @media (max-width: 520px) {
-  .studio-strip .legend:not(.studio-meter .legend) {
+  .studio-strip .legend:not(.studio-meter .legend),
+  .studio-strip .meter-label {
     display: none;
+  }
+
+  .studio-strip {
+    gap: 8px;
   }
 
   .transport-main {
